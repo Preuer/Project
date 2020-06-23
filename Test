@@ -1,0 +1,85 @@
+package pack1;
+
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Color;
+
+public class Test extends JFrame {
+
+
+	private static final long serialVersionUID = 1L;
+
+	int wert = 0;
+
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton btn1 = new JButton(Integer.toString(wert));
+	
+	JButton btn2 = new JButton("0 1");
+	JButton btn3 = new JButton("0 2");
+	JButton btn4 = new JButton("0 3");
+	JButton btn5 = new JButton("1 0");
+	JButton btn6 = new JButton("1 1");
+	JButton btn7 = new JButton("1 2");
+	JButton btn8 = new JButton("1 3");
+	JButton btn9 = new JButton("2 0");
+	JButton btn10 = new JButton("2 1");
+	JButton btn11 = new JButton("2 2");
+	JButton btn12 = new JButton("2 3");
+	JButton btn13 = new JButton("3 0");
+	JButton btn14 = new JButton("3 1");
+	JButton btn15 = new JButton("3 2");
+	JButton btn16 = new JButton("3 3");
+
+
+	public Test(){
+		panel.setLayout(new GridLayout(4,4,3,3));
+		panel.add(btn1);
+		panel.add(btn2);
+		panel.add(btn3);
+		panel.add(btn4);
+		panel.add(btn5);
+		panel.add(btn6);
+		panel.add(btn7);
+		panel.add(btn8);
+		panel.add(btn9);
+		panel.add(btn10);
+		panel.add(btn11);
+		panel.add(btn12);
+		panel.add(btn13);
+		panel.add(btn14);
+		panel.add(btn15);
+		panel.add(btn16);
+		frame.getContentPane().add(panel);
+
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setSize(600, 600);
+		frame.setVisible(true);
+
+		btn1.setBackground(Color.ORANGE);
+		btn2.setBackground(Color.BLUE);
+		//Blau ist nicht mehr anklickbar
+		btn2.setEnabled(false);
+		btn3.setBackground(new Color(102, 205, 170));
+		btn4.setBackground(new Color(248, 248, 255));
+
+		
+		//4x4 Array
+		int[][] werte = new int [4][4];
+		System.out.println(werte[0][1]);
+	}
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				new Test();
+			}
+		});
+	}
+
+
+}
