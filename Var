@@ -1,0 +1,38 @@
+package pack1;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+
+public class Var {
+
+	static JFrame jf1;
+
+	//Größe des Fensters
+	static int screenwidth = 800, screenheight = 600;
+
+	static int backgroundY1 = 0, backgroundY2 = -600;
+	//Bewegung
+	static boolean moveup= false, movedown= false, moveleft= false, moveright= false;
+
+	static Label lbl1;
+
+	static BufferedImage ib1, ib2;
+	public Var() {
+
+		try{
+			//Background
+			ib1 = ImageIO.read(new File("rcs/2048Hintergrund.png"));
+
+			ib2 = ImageIO.read(new File("rcs/2048Hintergrund.png"));
+		}catch(IOException e){
+			e.printStackTrace();
+			System.out.println("Bilder konnten nicht laden");
+
+		}
+	}
+
+}
